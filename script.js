@@ -15,7 +15,7 @@ let currentQuestionIndex = 0;
 let score = 0;
 let timer;
 
-let rulesAccepted = false; 
+let rulesAccepted = false;
 
 function showPage(page) {
     document.getElementById('home').classList.add('hidden');
@@ -32,8 +32,10 @@ function showPage(page) {
 }
 
 function acceptRules() {
-    rulesAccepted = true; 
-    showPage('playerData'); 
+    rulesAccepted = true; // Tandai bahwa aturan telah dibaca
+    document.getElementById('startQuizButton').style.display = 'none'; // Sembunyikan tombol mulai quiz
+    showPage('playerData'); // Tampilkan halaman pendaftaran pemain
+}
 
 function startQuiz() {
     if (!rulesAccepted) {
@@ -46,19 +48,10 @@ function startQuiz() {
     if (name && nim) {
         document.getElementById('resultName').innerText = name;
         document.getElementById('resultNIM').innerText = nim;
-        showPage('quiz');  
-        loadQuestion();     
-    }
-}
-
-function startQuiz() {
-    const name = document.getElementById('name').value;
-    const nim = document.getElementById('nim').value;
-    if (name && nim) {
-        document.getElementById('resultName').innerText = name;
-        document.getElementById('resultNIM').innerText = nim;
-        showPage('quiz');  
-        loadQuestion();     
+        showPage('quiz');
+        loadQuestion();
+    } else {
+        showNotification("Mohon isi nama dan NIM Anda terlebih dahulu.");
     }
 }
 
@@ -134,5 +127,4 @@ function showNotification(message) {
     setTimeout(() => {
         notification.remove();
     }, 3000);
-}
 }
