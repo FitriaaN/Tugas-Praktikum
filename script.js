@@ -11,7 +11,7 @@ const questions = [
     { text: "Apa yang menutupi sekitar 71% permukaan bumi: Daratan atau perairan?", type: "text", answer: "Perairan" }
 ];
 
-let currentQuestionIndex = 0;
+let currentQuestionIndex = 0;n
 let score = 0;
 let timer;
 
@@ -32,9 +32,9 @@ function showPage(page) {
 }
 
 function acceptRules() {
-    rulesAccepted = true; // Tandai bahwa aturan telah dibaca
-    document.getElementById('startQuizButton').style.display = 'none'; // Sembunyikan tombol mulai quiz
-    showPage('playerData'); // Tampilkan halaman pendaftaran pemain
+    rulesAccepted = true; 
+    document.getElementById('startQuizButton').style.display = 'none'; 
+    showPage('playerData'); 
 }
 
 function startQuiz() {
